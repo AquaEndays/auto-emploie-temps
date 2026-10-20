@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Chat - Live</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="welcome-screen">
+        <div class="welcome-card">
+            <h2>Bienvenue au Perfect Chat</h2>
+            <p>Veuillez choisir un nom d'utilisateur pour commencer à discuter.</p>
+            <input type="text" id="username-input" placeholder="Votre nom d'utilisateur..." maxlength="15">
+            <button id="join-chat-button">Rejoindre le Chat</button>
+            <div id="username-error" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="chat-app" class="hidden">
+        <header>
+            <h1 class="chat-title">Perfect Chat</h1>
+            <div id="user-info">
+                <span>Connecté en tant que: <strong id="current-username"></strong></span>
+            </div>
+        </header>
+        <div class="chat-main">
+            <aside id="sidebar">
+                <h3>Utilisateurs en ligne (<span id="user-count">0</span>)</h3>
+                <ul id="users-list">
+                    </ul>
+            </aside>
+            <main id="chat-area">
+                <ul id="messages">
+                    </ul>
+                <div id="typing-indicator"></div>
+                <form id="message-form">
+                    <input id="message-input" autocomplete="off" placeholder="Écrivez votre message ici..." />
+                    <button type="submit" id="send-button">Envoyer</button>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>

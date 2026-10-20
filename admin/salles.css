@@ -1,0 +1,357 @@
+/* Custom Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Elegant and readable body font */
+    background: linear-gradient(145deg, #1a2a3a 0%, #0d1a2a 100%); /* Deep, rich dark blue/black gradient */
+    margin: 0;
+    padding: 50px 20px;
+    color: #e0e0e0; /* Soft white for text */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Regal and strong heading font */
+    text-align: center;
+    color: #ffd700; /* Royal gold for headings */
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 0 5px rgba(0, 0, 0, 0.7); /* Luminous gold glow */
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3.5em;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #8b4513; /* Darker gold/bronze underline */
+    display: inline-block;
+    animation: scaleIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Specific adjustment for the "Ajouter une Salle" heading */
+body > h2:first-of-type {
+    margin-top: 0;
+}
+
+form {
+    background-color: rgba(26, 42, 58, 0.95); /* Slightly transparent dark background for form */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 215, 0, 0.1); /* Deep shadow with subtle inner glow */
+    max-width: 650px;
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 1px solid #4a4e54; /* Subtle dark border */
+    animation: fadeInScale 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 30px); /* Adjust for padding and border */
+    padding: 15px;
+    border: 2px solid #5a5e63; /* Darker, refined border */
+    border-radius: 10px;
+    background-color: #343a40; /* Very dark input background */
+    color: #f0f0f0;
+    font-size: 1.1em;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #b0b0b0; /* Lighter placeholder text */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #ffd700; /* Royal gold focus glow */
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), inset 0 2px 8px rgba(0, 0, 0, 0.5); /* Stronger gold shadow on focus */
+    background-color: #4a5158; /* Slightly lighter background on focus */
+}
+
+button[type="submit"] {
+    padding: 18px 35px;
+    background: linear-gradient(45deg, #ffd700, #daa520); /* Royal gold gradient button */
+    color: #1a2a3a; /* Dark text for contrast on gold */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5); /* Strong gold shadow */
+    letter-spacing: 1.2px;
+    align-self: center;
+    width: 60%;
+    max-width: 300px;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(45deg, #daa520, #ffd700);
+    transform: translateY(-5px) scale(1.03); /* More pronounced lift and enlarge */
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.7);
+}
+
+table {
+    width: 95%;
+    margin: 60px auto;
+    border-collapse: collapse;
+    background-color: rgba(36, 54, 70, 0.98); /* Rich dark table background */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+th, td {
+    padding: 20px 25px;
+    border: 1px solid rgba(74, 78, 84, 0.3); /* Subtle internal borders */
+    text-align: left;
+    color: #f0f0f0; /* Light text for table content */
+    font-size: 1.05em;
+}
+
+th {
+    background: linear-gradient(90deg, #8b4513, #a0522d); /* Rich bronze/gold header background */
+    color: #fff; /* Pure white for header text */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.15em;
+    position: sticky;
+    top: 0; /* Sticky headers for scrolling tables */
+    z-index: 1;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(46, 60, 75, 0.95); /* Slightly darker even rows */
+}
+
+tr:hover {
+    background-color: rgba(60, 75, 90, 0.9); /* Interactive hover effect */
+    transition: background-color 0.3s ease;
+}
+
+/* Actions column styling */
+td:last-child {
+    white-space: nowrap; /* Keep actions on one line */
+}
+
+a {
+    color: #ffd700; /* Gold links */
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+a:last-child {
+    margin-right: 0;
+}
+
+a:hover {
+    color: #ffeb82; /* Lighter gold on hover */
+    text-decoration: underline;
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6); /* Subtle glow on hover */
+}
+
+/* Specific styling for toggle/delete links */
+a[href*="toggle"] {
+    color: #28a745; /* Green for "available" toggle */
+    font-weight: 600;
+}
+a[href*="toggle"]:hover {
+    color: #218838;
+    text-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
+}
+a[href*="toggle"]::before {
+    content: '';
+    margin-right: 5px;
+}
+a[href*="toggle"] + a[href*="supprimer"] {
+    margin-left: 20px; /* Spacing between toggle and delete */
+}
+
+
+a[href*="supprimer"] {
+    color: #dc3545; /* Red for "delete" */
+    font-weight: 600;
+}
+a[href*="supprimer"]:hover {
+    color: #c82333;
+    text-shadow: 0 0 8px rgba(220, 53, 69, 0.6);
+}
+a[href*="supprimer"]::before {
+    content: '';
+    margin-right: 5px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 15px 35px;
+    background-color: #4a4e54; /* Dark grey for back link */
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.back-link:hover {
+    background-color: #5a5e63;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #ffd700; /* Gold on hover */
+}
+
+/* Animations */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 1024px) {
+    table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+    h2 {
+        font-size: 2.8em;
+        margin-bottom: 30px;
+    }
+    form {
+        padding: 30px;
+        margin: 30px auto;
+    }
+    input[type="text"],
+    input[type="number"] {
+        padding: 12px;
+        font-size: 1em;
+    }
+    button[type="submit"] {
+        padding: 15px 25px;
+        font-size: 1.1em;
+        width: 80%;
+    }
+    th, td {
+        padding: 15px 18px;
+        font-size: 0.95em;
+    }
+    th {
+        font-size: 1em;
+    }
+    a {
+        margin-right: 15px;
+    }
+    .back-link {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+    form {
+        padding: 20px;
+        margin: 20px auto;
+        gap: 15px;
+    }
+    input[type="text"],
+    input[type="number"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+    button[type="submit"] {
+        width: 90%;
+        font-size: 1em;
+        padding: 12px 18px;
+    }
+    table {
+        margin: 30px auto;
+        font-size: 0.85em;
+    }
+    th, td {
+        padding: 10px 12px;
+    }
+    /* Stack action links vertically for very small screens if necessary */
+    td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    a {
+        margin-right: 0;
+    }
+    a[href*="toggle"] + a[href*="supprimer"] {
+        margin-left: 0;
+    }
+    .back-link {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
